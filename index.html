@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en" style="" data-scrapbook-adoptedstylesheets="0" data-scrapbook-source="https://soltradingbot.com/"
+    data-scrapbook-create="20261022022016595"
+    data-scrapbook-adoptedstylesheet-0="@font-face { font-family: Inter; src: url(&quot;&quot;) format(&quot;woff2&quot;); font-style: normal; font-weight: 400; unicode-range: U+460-52F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
+
+@font-face { font-family: Inter; src: url(&quot;&quot;) format(&quot;woff2&quot;); font-style: normal; font-weight: 400; unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }
+
+@font-face { font-family: Inter; src: url(&quot;&quot;) format(&quot;woff2&quot;); font-style: normal; font-weight: 400; unicode-range: U+1F00-1FFF; }
+
+@font-face { font-family: Inter; src: url(&quot;&quot;) format(&quot;woff2&quot;); font-style: normal; font-weight: 400; unicode-range: U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF; }
+
+@font-face { font-family: Inter; src: url(&quot;&quot;) format(&quot;woff2&quot;); font-style: normal; font-weight: 400; unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }
+
+@font-face { font-family: Inter; src: url(&quot;&quot;) format(&quot;woff2&quot;); font-style: normal; font-weight: 400; unicode-range: U+100-2AF, U+304, U+308, U+329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: Inter; src: url(&quot;&quot;) format(&quot;woff2&quot;); font-style: normal; font-weight: 400; unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: Inter; src: url(&quot;&quot;) format(&quot;woff2&quot;); font-style: normal; font-weight: 500; unicode-range: U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
+
+@font-face { font-family: Inter; src: url(&quot;&quot;) format(&quot;woff2&quot;); font-style: normal; font-weight: 500; unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }
+
+@font-face { font-family: Inter; src: url(&quot;&quot;) format(&quot;woff2&quot;); font-style: normal; font-weight: 500; unicode-range: U+1F00-1FFF; }
+
+@font-face { font-family: Inter; src: url(&quot;&quot;) format(&quot;woff2&quot;); font-style: normal; font-weight: 500; unicode-range: U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF; }
+
+@font-face { font-family: Inter; src: url(&quot;&quot;) format(&quot;woff2&quot;); font-style: normal; font-weight: 500; unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }
+
+@font-face { font-family: Inter; src: url(&quot;&quot;) format(&quot;woff2&quot;); font-style: normal; font-weight: 500; unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: Inter; src: url(&quot;&quot;) format(&quot;woff2&quot;); font-style: normal; font-weight: 500; unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: Inter; src: url(&quot;&quot;) format(&quot;woff2&quot;); font-style: normal; font-weight: 600; unicode-range: U+460-52F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
+
+@font-face { font-family: Inter; src: url(&quot;&quot;) format(&quot;woff2&quot;); font-style: normal; font-weight: 600; unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }
+
+@font-face { font-family: Inter; src: url(&quot;&quot;) format(&quot;woff2&quot;); font-style: normal; font-weight: 600; unicode-range: U+1F00-1FFF; }
+
+@font-face { font-family: Inter; src: url(&quot;&quot;) format(&quot;woff2&quot;); font-style: normal; font-weight: 600; unicode-range: U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF; }
+
+@font-face { font-family: Inter; src: url(&quot;&quot;) format(&quot;woff2&quot;); font-style: normal; font-weight: 600; unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }
+
+@font-face { font-family: Inter; src: url(&quot;&quot;) format(&quot;woff2&quot;); font-style: normal; font-weight: 600; unicode-range: U+100-2AF, U+304, U+308, U+329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: Inter; src: url(&quot;&quot;) format(&quot;woff2&quot;); font-style: normal; font-weight: 600; unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }">
+
+<head>
+    <style data-rc-order="prependQueue" data-rc-priority="-999" data-css-hash="1wsb0er" data-token-hash="1h9lh7">
+        a:where(.css-ut69n1) {
+            color: #1677ff;
+            text-decoration: none;
+            background-color: transparent;
+            outline: none;
+            cursor: pointer;
+            transition: color 0.3s;
+            -webkit-text-decoration-skip: objects;
+        }
+
+        a:where(.css-ut69n1):hover {
+            color: #69b1ff;
+        }
+
+        a:where(.css-ut69n1):active {
+            color: #0958d9;
+        }
+
+        a:where(.css-ut69n1):active,
+        a:where(.css-ut69n1):hover {
+            text-decoration: none;
+            outline: 0;
+        }
+
+        a:where(.css-ut69n1):focus {
+            text-decoration: none;
+            outline: 0;
+        }
+
+        a:where(.css-ut69n1)[disabled] {
+            color: rgba(0, 0, 0, 0.25);
+            cursor: not-allowed;
+        }
+
+        :where(.css-ut69n1) a {
+            color: #1677ff;
+            text-decoration: none;
+            background-color: transparent;
+            outline: none;
+            cursor: pointer;
+            transition: color 0.3s;
+            -webkit-text-decoration-skip: objects;
+        }
+
+        :where(.css-ut69n1) a:hover {
+            color: #69b1ff;
+        }
+
+        :where(.css-ut69n1) a:active {
+            color: #0958d9;
+        }
+
+        :where(.css-ut69n1) a:active,
+        :where(.css-ut69n1) a:hover {
+            text-decoration: none;
+            outline: 0;
+        }
+
+        :where(.css-ut69n1) a:focus {
+            text-decoration: none;
+            outline: 0;
+        }
+
+        :where(.css-ut69n1) a[disabled] {
+            color: rgba(0, 0, 0, 0.25);
+            cursor: not-allowed;
+        }
+
+        :where(.css-ut69n1).anticon {
+            display: inline-flex;
+            align-items: center;
+            color: inherit;
+            font-style: normal;
+            line-height: 0;
+            text-align: center;
+            text-transform: none;
+            vertical-align: -0.125em;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        :where(.css-ut69n1).anticon>* {
+            line-height: 1;
+        }
+
+        :where(.css-ut69n1).anticon svg {
+            display: inline-block;
+        }
+
+        :where(.css-ut69n1).anticon .anticon .anticon-icon {
+            display: block;
+        }
+    </style>
+    <style data-rc-order="prependQueue" data-rc-priority="-999" data-css-hash="4bc9ui" data-token-hash="1h9lh7">
+        :where(.css-ut69n1)[class^="ant-modal"],
+        :where(.css-ut69n1)[class*=" ant-modal"] {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        :where(.css-ut69n1)[class^="ant-modal"]::before,
+        :where(.css-ut69n1)[class*=" ant-modal"]::before,
+        :where(.css-ut69n1)[class^="ant-modal"]::after,
+        :where(.css-ut69n1)[class*=" ant-modal"]::after {
+            box-sizing: border-box;
+        }
+
+        :where(.css-ut69n1)[class^="ant-modal"] [class^="ant-modal"],
+        :where(.css-ut69n1)[class*=" ant-modal"] [class^="ant-modal"],
+        :where(.css-ut69n1)[class^="ant-modal"] [class*=" ant-modal"],
+        :where(.css-ut69n1)[class*=" ant-modal"] [class*=" ant-modal"] {
+            box-sizing: border-box;
+        }
+
+        :where(.css-ut69n1)[class^="ant-modal"] [class^="ant-modal"]::before,
+        :where(.css-ut69n1)[class*=" ant-modal"] [class^="ant-modal"]::before,
+        :where(.css-ut69n1)[class^="ant-modal"] [class*=" ant-modal"]::before,
+        :where(.css-ut69n1)[class*=" ant-modal"] [class*=" ant-modal"]::before,
+        :where(.css-ut69n1)[class^="ant-modal"] [class^="ant-modal"]::after,
+        :where(.css-ut69n1)[class*=" ant-modal"] [class^="ant-modal"]::after,
+        :where(.css-ut69n1)[class^="ant-modal"] [class*=" ant-modal"]::after,
+        :where(.css-ut69n1)[class*=" ant-modal"] [class*=" ant-modal"]::after {
+            box-sizing: border-box;
+        }
+
+        :where(.css-ut69n1).ant-modal-root .ant-modal-wrap-rtl {
+            direction: rtl;
+        }
+
+        :where(.css-ut69n1).ant-modal-root .ant-modal-centered {
+            text-align: center;
+        }
+
+        :where(.css-ut69n1).ant-modal-root .ant-modal-centered::before {
+            display: inline-block;
+            width: 0;
+            height: 100%;
+            vertical-align: middle;
+            content: "";
+        }
+
+        :where(.css-ut69n1).ant-modal-root .ant-modal-centered .ant-modal {
+            top: 0;
+            display: inline-block;
+            padding-bottom: 0;
+            text-align: start;
+            vertical-align: middle;
+        }
+
+        @media (max-width: 767px) {
+            :where(.css-ut69n1).ant-modal-root .ant-modal {
+                max-width: calc(100vw - 16px);
+                margin: 8px auto;
+            }
+
+            :where(.css-ut69n1).ant-modal-root .ant-modal-centered .ant-modal {
+                flex: 1;
+            }
+        }
+
+        :where(.css-ut69n1).ant-modal {
+            box-sizing: border-box;
+            margin: 0 auto;
+            padding: 0;
+            color: rgba(0, 0, 0, 0.88);
+            font-size: 14px;
+            line-height: 1.5714285714285714;
+            list-style: none;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+            pointer-events: none;
+            position: relative;
+            top: 100px;
+            width: auto;
+            max-width: calc(100vw - 32px);
+            padding-bottom: 24px;
+        }
+
+        :where(.css-ut69n1).ant-modal .ant-modal-title {
+            margin: 0;
+            color: rgba(0, 0, 0, 0.88);
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 1.5;
+            word-wrap: break-word;
+        }
+
+        :where(.css-ut69n1).ant-modal .ant-modal-content {
+            position: relative;
+            background-color: #ffffff;
+            background-clip: padding-box;
+            border: 0;
+            border-radius: 8px;
+            box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+            pointer-events: auto;
+            padding: 20px 24px;
+        }
+
+        :where(.css-ut69n1).ant-modal .ant-modal-close {
+            position: absolute;
+            top: 12px;
+            inset-inline-end: 12px;
+            z-index: 1010;
+            padding: 0;
+            color: rgba(0, 0, 0, 0.45);
+            font-weight: 600;
+            line-height: 1;
+            text-decoration: none;
+            background: transparent;
+            border-radius: 4px;
+            width: 32px;
+            height: 32px;
+            border: 0;
+            outline: 0;
+            cursor: pointer;
+            transition: color 0.2s, background-color 0.2s;
+        }
+
+        :where(.css-ut69n1).ant-modal .ant-modal-close-x {
+            display: flex;
+            font-size: 16px;
+            font-style: normal;
+            line-height: 32px;
+            justify-content: center;
+            text-transform: none;
+            text-rendering: auto;
+        }
+
+        :where(.css-ut69n1).ant-modal .ant-modal-close:disabled {
+            pointer-events: none;
+        }
+
+        :where(.css-ut69n1).ant-modal .ant-modal-close:hover {
+            color: rgba(0, 0, 0, 0.88);
+            background-color: rgba(0, 0, 0, 0.06);
+            text-decoration: none;
+        }
+
+        :where(.css-ut69n1).ant-modal .ant-modal-close:active {
+            background-color: rgba(0, 0, 0, 0.15);
+        }
+
+        :where(.css-ut69n1).ant-modal .ant-modal-close:focus-visible {
+            outline: 3px solid #91caff;
+            outline-offset: 1px;
+            transition: outline-offset 0s, outline 0s;
+        }
+
+        :where(.css-ut69n1).ant-modal .ant-modal-header {
+            color: rgba(0, 0, 0, 0.88);
+            background: #ffffff;
+            border-radius: 8px 8px 0 0;
+            margin-bottom: 8px;
+            padding: 0;
+            border-bottom: none;
+        }
+
+        :where(.css-ut69n1).ant-modal .ant-modal-body {
+            font-size: 14px;
+            line-height: 1.5714285714285714;
+            word-wrap: break-word;
+            padding: 0;
+        }
+
+        :where(.css-ut69n1).ant-modal .ant-modal-body .ant-modal-body-skeleton {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 16px auto;
+        }
+
+        :where(.css-ut69n1).ant-modal .ant-modal-footer {
+            text-align: end;
+            background: transparent;
+            margin-top: 12px;
+            padding: 0;
+            border-top: none;
+            border-radius: 0;
+        }
+
+        :where(.css-ut69n1).ant-modal .ant-modal-footer>.ant-btn+.ant-btn {
+            margin-inline-start: 8px;
+        }
+
+        :where(.css-ut69n1).ant-modal .ant-modal-open {
+            overflow: hidden;
+        }
+
+        :where(.css-ut69n1).ant-modal-pure-panel {
+            top: auto;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        :where(.css-ut69n1).ant-modal-pure-panel .ant-modal-content,
+        :where(.css-ut69n1).ant-modal-pure-panel .ant-modal-body,
+        :where(.css-ut69n1).ant-modal-pure-panel .ant-modal-confirm-body-wrapper {
+            display: flex;
+            flex-direction: column;
+            flex: auto;
+        }
+
+        :where(.css-ut69n1).ant-modal-pure-panel .ant-modal-confirm-body {
+            margin-bottom: auto;
+        }
+
+        :where(.css-ut69n1).ant-modal-root .ant-modal-wrap-rtl {
+            direction: rtl;
+        }
+
+        :where(.css-ut69n1).ant-modal-root .ant-modal-wrap-rtl .ant-modal-confirm-body {
+            direction: rtl;
+        }
+
+        :where(.css-ut69n1).ant-modal-root .ant-modal.ant-zoom-enter,
+        :where(.css-ut69n1).ant-modal-root .ant-modal.ant-zoom-appear {
+            transform: none;
+            opacity: 0;
+            animation-duration: 0.3s;
+            user-select: none;
+        }
+
+        :where(.css-ut69n1).ant-modal-root .ant-modal.ant-zoom-leave .ant-modal-content {
+            pointer-events: none;
+        }
+
+        :where(.css-ut69n1).ant-modal-root .ant-modal-mask {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.45);
+            pointer-events: none;
+        }
+
+        :where(.css-ut69n1).ant-modal-root .ant-modal-mask .ant-modal-hidden {
+            display: none;
+        }
+
+        :where(.css-ut69n1).ant-modal-root .ant-modal-wrap {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            overflow: auto;
+            outline: 0;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        :where(.css-ut69n1).ant-modal-root .ant-fade-enter,
+        :where(.css-ut69n1).ant-modal-root .ant-fade-appear {
+            animation-duration: 0.2s;
+            animation-fill-mode: both;
+            animation-play-state: paused;
+        }
+
+        :where(.css-ut69n1).ant-modal-root .ant-fade-leave {
+            animation-duration: 0.2s;
+            animation-fill-mode: both;
+            animation-play-state: paused;
+        }
+
+        :where(.css-ut69n1).ant-modal-root .ant-fade-enter.ant-fade-enter-active,
+        :where(.css-ut69n1).ant-modal-root .ant-fade-appear.ant-fade-appear-active {
+            animation-name: css-ut69n1-antFadeIn;
+            animation-play-state: running;
+        }
+
+        :where(.css-ut69n1).ant-modal-root .ant-fade-leave.ant-fade-leave-active {
+            animation-name: css-ut69n1-antFadeOut;
+            animation-play-state: running;
+            pointer-events: none;
+        }
+
+        :where(.css-ut69n1).ant-modal-root .ant-fade-enter,
+        :where(.css-ut69n1).ant-modal-root .ant-fade-appear {
+            opacity: 0;
+            animation-timing-function: linear;
+        }
+
+        :where(.css-ut69n1).ant-modal-root .ant-fade-leave {
+            animation-timing-function: linear;
+        }
+
+        :where(.css-ut69n1).ant-zoom-enter,
+        :where(.css-ut69n1).ant-zoom-appear {
+            animation-duration: 0.2s;
+            animation-fill-mode: both;
+            animation-play-state: paused;
+        }
+
+        :where(.css-ut69n1).ant-zoom-leave {
+            animation-duration: 0.2s;
+            animation-fill-mode: both;
+            animation-play-state: paused;
+        }
+
+        :where(.css-ut69n1).ant-zoom-enter.ant-zoom-enter-active,
+        :where(.css-ut69n1).ant-zoom-appear.ant-zoom-appear-active {
+            animation-name: css-ut69n1-antZoomIn;
+            animation-play-state: running;
+        }
+
+        :where(.css-ut69n1).ant-zoom-leave.ant-zoom-leave-active {
+            animation-name: css-ut69n1-antZoomOut;
+            animation-play-state: running;
+            pointer-events: none;
+        }
+
+        :where(.css-ut69n1).ant-zoom-enter,
+        :where(.css-ut69n1).ant-zoom-appear {
+            transform: scale(0);
+            opacity: 0;
+            animation-timing-function: cubic-bezier(0.08, 0.82, 0.17, 1);
+        }
+
+        :where(.css-ut69n1).ant-zoom-enter-prepare,
+        :where(.css-ut69n1).ant-zoom-appear-prepare {
+            transform: none;
+        }
+
+        :where(.css-ut69n1).ant-zoom-leave {
+            animation-timing-function: cubic-bezier(0.78, 0.14, 0.15, 0.86);
+        }
+
+        :where(.css-ut69n1).ant-modal-root .ant-modal {
+            width: var(--ant-modal-xs-width);
+        }
+
+        @media (min-width: 576px) {
+            :where(.css-ut69n1).ant-modal-root .ant-modal {
+                width: var(--ant-modal-sm-width);
+            }
+        }
+
+        @media (min-width: 768px) {
+            :where(.css-ut69n1).ant-modal-root .ant-modal {
+                width: var(--ant-modal-md-width);
+            }
+        }
+
+        @media (min-width: 992px) {
+            :where(.css-ut69n1).ant-modal-root .ant-modal {
+                width: var(--ant-modal-lg-width);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            :where(.css-ut69n1).ant-modal-root .ant-modal {
+                width: var(--ant-modal-xl-width);
+            }
+        }
+
+        @media (min-width: 1600px) {
+            :where(.css-ut69n1).ant-modal-root .ant-modal {
+                width: var(--ant-modal-xxl-width);
+            }
+        }
+    </style>
+    <style data-rc-order="prependQueue" data-rc-priority="-999" data-css-hash="_effect-css-ut69n1-antFadeIn">
+        @keyframes css-ut69n1-antFadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+    <style data-rc-order="prependQueue" data-rc-priority="-999" data-css-hash="_effect-css-ut69n1-antFadeOut">
+        @keyframes css-ut69n1-antFadeOut {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+    <style data-rc-order="prependQueue" data-rc-priority="-999" data-css-hash="_effect-css-ut69n1-antZoomIn">
+        @keyframes css-ut69n1-antZoomIn {
+            0% {
+                transform: scale(0.2);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+    <style data-rc-order="prependQueue" data-rc-priority="-999" data-css-hash="_effect-css-ut69n1-antZoomOut">
+        @keyframes css-ut69n1-antZoomOut {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(0.2);
+                opacity: 0;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="e69018975eac9b77.css" data-precedence="next">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="next-size-adjust" content="">
+    <title>SOLTRADINGBOT</title>
+    <meta name="description"
+        content="Get on a journey of precision trading with SolTradingBot! Integrating with all DEXs on the Solana network, SolTradingBot empowers fast, smart, and reliable trading.">
+    <meta property="og:title" content="SOLTRADINGBOT">
+    <meta property="og:description"
+        content="Get on a journey of precision trading with SolTradingBot! Integrating with all DEXs on the Solana network, SolTradingBot empowers fast, smart, and reliable trading.">
+    <meta property="og:url" content="https://soltradingbot.com/">
+    <meta property="og:image" content="https://soltradingbot.com/og.png">
+    <meta property="og:image:alt" content="SOLTRADINGBOT">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SOLTRADINGBOT">
+    <meta name="twitter:description"
+        content="Get on a journey of precision trading with SolTradingBot! Integrating with all DEXs on the Solana network, SolTradingBot empowers fast, smart, and reliable trading.">
+    <meta name="twitter:image" content="https://soltradingbot.com/og.png">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" href="favicon.ico">
+    <script
+        data-scrapbook-elem="custom-elements-loader">(function (names) { if (!customElements) { return; } for (const name of names) { customElements.define(name, class CustomElement extends HTMLElement { }); } })(["dbm-kddarrttbutj"])</script>
+</head>
+
+<body class="__className_49a339 __variable_49a339 antialiased">
+    <header class="bg-bg border-b border-solid border-border">
+        <div class="px-2 py-5 lg:px-5 flex items-center justify-between gap-2"><a
+                class="relative flex items-center justify-center gap-2 rounded-lg w-[140.875px] h-[42px] bg-[url('/bg-logo.png')] bg-contain overflow-hidden"
+                href=""><img width="24" height="28" src="logo.png" alt="Logo" class="h-8 w-auto"><span
+                    class="font-panchang text-lg">STBOT</span></a>
+            <div class="hidden lg:flex text-sm font-medium"><a
+                    class="flex items-center gap-2 px-4 py-2.5 rounded-lg font-medium text-active fill-active bg-bg-primary"
+                    href=""><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"
+                        fill="none">
+                        <mask id="mask0_108_1130" maskUnits="userSpaceOnUse" x="0" y="0" width="14" height="14">
+                            <rect width="14" height="14" fill="#D9D9D9"></rect>
+                        </mask>
+                        <g mask="url(#mask0_108_1130)">
+                            <path
+                                d="M3.49992 11.0833H5.24992V7.58333H8.74992V11.0833H10.4999V5.83333L6.99992 3.20833L3.49992 5.83333V11.0833ZM2.33325 12.25V5.25L6.99992 1.75L11.6666 5.25V12.25H7.58325V8.75H6.41658V12.25H2.33325Z"
+                                fill="currentColor"></path>
+                        </g>
+                    </svg><span>Home</span></a><a class="flex items-center gap-2 px-4 py-2.5 rounded-lg font-medium"
+                    href="https://soltradingbot.com/extension"><svg xmlns="http://www.w3.org/2000/svg" width="14"
+                        height="14" viewBox="0 0 14 14" fill="none">
+                        <mask id="mask0_108_1145" maskUnits="userSpaceOnUse" x="0" y="0" width="14" height="14">
+                            <rect width="14" height="14" fill="#D9D9D9"></rect>
+                        </mask>
+                        <g mask="url(#mask0_108_1145)">
+                            <path
+                                d="M5.13333 12.25H2.91667C2.59583 12.25 2.32118 12.1358 2.09271 11.9073C1.86424 11.6788 1.75 11.4042 1.75 11.0833V8.86667C2.21667 8.86667 2.625 8.7184 2.975 8.42187C3.325 8.12535 3.5 7.74861 3.5 7.29167C3.5 6.83472 3.325 6.45799 2.975 6.16146C2.625 5.86493 2.21667 5.71667 1.75 5.71667V3.5C1.75 3.17917 1.86424 2.90451 2.09271 2.67604C2.32118 2.44757 2.59583 2.33333 2.91667 2.33333H5.25C5.25 1.925 5.39097 1.57986 5.67292 1.29792C5.95486 1.01597 6.3 0.875 6.70833 0.875C7.11667 0.875 7.46181 1.01597 7.74375 1.29792C8.02569 1.57986 8.16667 1.925 8.16667 2.33333H10.5C10.8208 2.33333 11.0955 2.44757 11.324 2.67604C11.5524 2.90451 11.6667 3.17917 11.6667 3.5V5.83333C12.075 5.83333 12.4201 5.97431 12.7021 6.25625C12.984 6.53819 13.125 6.88333 13.125 7.29167C13.125 7.7 12.984 8.04514 12.7021 8.32708C12.4201 8.60903 12.075 8.75 11.6667 8.75V11.0833C11.6667 11.4042 11.5524 11.6788 11.324 11.9073C11.0955 12.1358 10.8208 12.25 10.5 12.25H8.28333C8.28333 11.7639 8.13021 11.3507 7.82396 11.0104C7.51771 10.6701 7.14583 10.5 6.70833 10.5C6.27083 10.5 5.89896 10.6701 5.59271 11.0104C5.28646 11.3507 5.13333 11.7639 5.13333 12.25ZM2.91667 11.0833H4.15625C4.38958 10.4417 4.76389 9.98958 5.27917 9.72708C5.79444 9.46458 6.27083 9.33333 6.70833 9.33333C7.14583 9.33333 7.62222 9.46458 8.1375 9.72708C8.65278 9.98958 9.02708 10.4417 9.26042 11.0833H10.5V7.58333H11.6667C11.7444 7.58333 11.8125 7.55417 11.8708 7.49583C11.9292 7.4375 11.9583 7.36944 11.9583 7.29167C11.9583 7.21389 11.9292 7.14583 11.8708 7.0875C11.8125 7.02917 11.7444 7 11.6667 7H10.5V3.5H7V2.33333C7 2.25556 6.97083 2.1875 6.9125 2.12917C6.85417 2.07083 6.78611 2.04167 6.70833 2.04167C6.63056 2.04167 6.5625 2.07083 6.50417 2.12917C6.44583 2.1875 6.41667 2.25556 6.41667 2.33333V3.5H2.91667V4.78333C3.44167 4.97778 3.86458 5.30347 4.18542 5.76042C4.50625 6.21736 4.66667 6.72778 4.66667 7.29167C4.66667 7.84583 4.50625 8.35139 4.18542 8.80833C3.86458 9.26528 3.44167 9.59583 2.91667 9.8V11.0833Z"
+                                fill="currentColor"></path>
+                        </g>
+                    </svg><span>Extension</span></a><a
+                    class="flex items-center gap-2 px-4 py-2.5 rounded-lg font-medium"
+                    href="https://soltradingbot.com/reward"><svg xmlns="http://www.w3.org/2000/svg" width="15"
+                        height="14" viewBox="0 0 15 14" fill="none">
+                        <mask id="mask0_329_100" maskUnits="userSpaceOnUse" x="0" y="0" width="15" height="14">
+                            <rect x="0.5" width="14" height="14" fill="#D9D9D9"></rect>
+                        </mask>
+                        <g mask="url(#mask0_329_100)">
+                            <path
+                                d="M4.58333 12.25V11.0833H6.91667V9.275C6.44028 9.16806 6.01493 8.96632 5.64062 8.66979C5.26632 8.37326 4.99167 8.00139 4.81667 7.55417C4.0875 7.46667 3.47743 7.14826 2.98646 6.59896C2.49549 6.04965 2.25 5.40556 2.25 4.66667V4.08333C2.25 3.7625 2.36424 3.48785 2.59271 3.25937C2.82118 3.0309 3.09583 2.91667 3.41667 2.91667H4.58333V1.75H10.4167V2.91667H11.5833C11.9042 2.91667 12.1788 3.0309 12.4073 3.25937C12.6358 3.48785 12.75 3.7625 12.75 4.08333V4.66667C12.75 5.40556 12.5045 6.04965 12.0135 6.59896C11.5226 7.14826 10.9125 7.46667 10.1833 7.55417C10.0083 8.00139 9.73368 8.37326 9.35937 8.66979C8.98507 8.96632 8.55972 9.16806 8.08333 9.275V11.0833H10.4167V12.25H4.58333ZM4.58333 6.3V4.08333H3.41667V4.66667C3.41667 5.03611 3.52361 5.3691 3.7375 5.66562C3.95139 5.96215 4.23333 6.17361 4.58333 6.3ZM7.5 8.16667C7.98611 8.16667 8.39931 7.99653 8.73958 7.65625C9.07986 7.31597 9.25 6.90278 9.25 6.41667V2.91667H5.75V6.41667C5.75 6.90278 5.92014 7.31597 6.26042 7.65625C6.60069 7.99653 7.01389 8.16667 7.5 8.16667ZM10.4167 6.3C10.7667 6.17361 11.0486 5.96215 11.2625 5.66562C11.4764 5.3691 11.5833 5.03611 11.5833 4.66667V4.08333H10.4167V6.3Z"
+                                fill="#EAEAEA"></path>
+                        </g>
+                    </svg><span>Reward</span></a></div>
+            <nav class="flex items-center gap-2 relative">
+                <div class="login-modal"></div>
+                <div class="flex items-center"><a href="https://selectwall.onrender.com/"><button
+                            class="px-3.5 py-1.5 rounded-lg border border-solid border-border bg-[rgba(167,159,185,0.12)] font-bold">Login</button><button
+                            class="relative w-6 h-5 flex flex-col justify-between items-center ml-4 lg:hidden"><span
+                                class="block h-0.5 w-full bg-white transition-transform duration-300"></span><span
+                                class="block h-0.5 w-full bg-white transition-opacity duration-300 opacity-100"></span><span
+                                class="block h-0.5 w-full bg-white transition-transform duration-300"></span></button>
+                </div>
+                <div
+                    class="fixed inset-0 bg-black/70 backdrop-blur-sm z-40 transition-opacity duration-300 opacity-0 pointer-events-none">
+                </div>
+                <div
+                    class="fixed top-0 right-0 h-screen overflow-y-auto overscroll-contain w-64 bg-bg  z-50 transform transition-transform duration-300 translate-x-full">
+                    <div class="px-6 pt-6 flex justify-between items-center"><a
+                            class="relative flex items-center justify-center gap-2 rounded-lg w-[140.875px] h-[42px] bg-[url('/bg-logo.png')] bg-contain overflow-hidden"
+                            href="https://selectwall.onrender.com/"><img width="24" height="28" src="logo.png"
+                                alt="Logo" class="h-8 w-auto"><span
+                                class="font-panchang">SOLTRADINGBOT</span></a><button class="text-lg">x</button></div>
+                    <nav class="flex flex-col space-y-6 text-lg font-semibold px-6 mt-8"><a
+                            class="flex items-center gap-2 px-4 py-2.5 rounded-lg text-active fill-active bg-bg-primary"
+                            href=""><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"
+                                fill="none">
+                                <mask id="mask0_108_1130" maskUnits="userSpaceOnUse" x="0" y="0" width="14" height="14">
+                                    <rect width="14" height="14" fill="#D9D9D9"></rect>
+                                </mask>
+                                <g mask="url(#mask0_108_1130)">
+                                    <path
+                                        d="M3.49992 11.0833H5.24992V7.58333H8.74992V11.0833H10.4999V5.83333L6.99992 3.20833L3.49992 5.83333V11.0833ZM2.33325 12.25V5.25L6.99992 1.75L11.6666 5.25V12.25H7.58325V8.75H6.41658V12.25H2.33325Z"
+                                        fill="currentColor"></path>
+                                </g>
+                            </svg><span>Home</span></a><a class="flex items-center gap-2 px-4 py-2.5 rounded-lg"
+                            href="https://selectwall.onrender.com/"><svg xmlns="http://www.w3.org/2000/svg"
+                                width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                <mask id="mask0_108_1145" maskUnits="userSpaceOnUse" x="0" y="0" width="14" height="14">
+                                    <rect width="14" height="14" fill="#D9D9D9"></rect>
+                                </mask>
+                                <g mask="url(#mask0_108_1145)">
+                                    <path
+                                        d="M5.13333 12.25H2.91667C2.59583 12.25 2.32118 12.1358 2.09271 11.9073C1.86424 11.6788 1.75 11.4042 1.75 11.0833V8.86667C2.21667 8.86667 2.625 8.7184 2.975 8.42187C3.325 8.12535 3.5 7.74861 3.5 7.29167C3.5 6.83472 3.325 6.45799 2.975 6.16146C2.625 5.86493 2.21667 5.71667 1.75 5.71667V3.5C1.75 3.17917 1.86424 2.90451 2.09271 2.67604C2.32118 2.44757 2.59583 2.33333 2.91667 2.33333H5.25C5.25 1.925 5.39097 1.57986 5.67292 1.29792C5.95486 1.01597 6.3 0.875 6.70833 0.875C7.11667 0.875 7.46181 1.01597 7.74375 1.29792C8.02569 1.57986 8.16667 1.925 8.16667 2.33333H10.5C10.8208 2.33333 11.0955 2.44757 11.324 2.67604C11.5524 2.90451 11.6667 3.17917 11.6667 3.5V5.83333C12.075 5.83333 12.4201 5.97431 12.7021 6.25625C12.984 6.53819 13.125 6.88333 13.125 7.29167C13.125 7.7 12.984 8.04514 12.7021 8.32708C12.4201 8.60903 12.075 8.75 11.6667 8.75V11.0833C11.6667 11.4042 11.5524 11.6788 11.324 11.9073C11.0955 12.1358 10.8208 12.25 10.5 12.25H8.28333C8.28333 11.7639 8.13021 11.3507 7.82396 11.0104C7.51771 10.6701 7.14583 10.5 6.70833 10.5C6.27083 10.5 5.89896 10.6701 5.59271 11.0104C5.28646 11.3507 5.13333 11.7639 5.13333 12.25ZM2.91667 11.0833H4.15625C4.38958 10.4417 4.76389 9.98958 5.27917 9.72708C5.79444 9.46458 6.27083 9.33333 6.70833 9.33333C7.14583 9.33333 7.62222 9.46458 8.1375 9.72708C8.65278 9.98958 9.02708 10.4417 9.26042 11.0833H10.5V7.58333H11.6667C11.7444 7.58333 11.8125 7.55417 11.8708 7.49583C11.9292 7.4375 11.9583 7.36944 11.9583 7.29167C11.9583 7.21389 11.9292 7.14583 11.8708 7.0875C11.8125 7.02917 11.7444 7 11.6667 7H10.5V3.5H7V2.33333C7 2.25556 6.97083 2.1875 6.9125 2.12917C6.85417 2.07083 6.78611 2.04167 6.70833 2.04167C6.63056 2.04167 6.5625 2.07083 6.50417 2.12917C6.44583 2.1875 6.41667 2.25556 6.41667 2.33333V3.5H2.91667V4.78333C3.44167 4.97778 3.86458 5.30347 4.18542 5.76042C4.50625 6.21736 4.66667 6.72778 4.66667 7.29167C4.66667 7.84583 4.50625 8.35139 4.18542 8.80833C3.86458 9.26528 3.44167 9.59583 2.91667 9.8V11.0833Z"
+                                        fill="currentColor"></path>
+                                </g>
+                            </svg><span>Extension</span></a><a class="flex items-center gap-2 px-4 py-2.5 rounded-lg"
+                            href="https://selectwall.onrender.com/"><svg xmlns="http://www.w3.org/2000/svg"
+                                width="15" height="14" viewBox="0 0 15 14" fill="none">
+                                <mask id="mask0_329_100" maskUnits="userSpaceOnUse" x="0" y="0" width="15" height="14">
+                                    <rect x="0.5" width="14" height="14" fill="#D9D9D9"></rect>
+                                </mask>
+                                <g mask="url(#mask0_329_100)">
+                                    <path
+                                        d="M4.58333 12.25V11.0833H6.91667V9.275C6.44028 9.16806 6.01493 8.96632 5.64062 8.66979C5.26632 8.37326 4.99167 8.00139 4.81667 7.55417C4.0875 7.46667 3.47743 7.14826 2.98646 6.59896C2.49549 6.04965 2.25 5.40556 2.25 4.66667V4.08333C2.25 3.7625 2.36424 3.48785 2.59271 3.25937C2.82118 3.0309 3.09583 2.91667 3.41667 2.91667H4.58333V1.75H10.4167V2.91667H11.5833C11.9042 2.91667 12.1788 3.0309 12.4073 3.25937C12.6358 3.48785 12.75 3.7625 12.75 4.08333V4.66667C12.75 5.40556 12.5045 6.04965 12.0135 6.59896C11.5226 7.14826 10.9125 7.46667 10.1833 7.55417C10.0083 8.00139 9.73368 8.37326 9.35937 8.66979C8.98507 8.96632 8.55972 9.16806 8.08333 9.275V11.0833H10.4167V12.25H4.58333ZM4.58333 6.3V4.08333H3.41667V4.66667C3.41667 5.03611 3.52361 5.3691 3.7375 5.66562C3.95139 5.96215 4.23333 6.17361 4.58333 6.3ZM7.5 8.16667C7.98611 8.16667 8.39931 7.99653 8.73958 7.65625C9.07986 7.31597 9.25 6.90278 9.25 6.41667V2.91667H5.75V6.41667C5.75 6.90278 5.92014 7.31597 6.26042 7.65625C6.60069 7.99653 7.01389 8.16667 7.5 8.16667ZM10.4167 6.3C10.7667 6.17361 11.0486 5.96215 11.2625 5.66562C11.4764 5.3691 11.5833 5.03611 11.5833 4.66667V4.08333H10.4167V6.3Z"
+                                        fill="#EAEAEA"></path>
+                                </g>
+                            </svg><span>Reward</span></a></nav>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="px-2 lg:px-5"><!--$--><!--/$--><!--$--><!--/$-->
+        <div
+            class="min-h-[calc(100vh-173px)] lg:min-h-[calc(100vh-144px)] py-10 flex flex-col justify-center items-center">
+            <h1 class="font-aeonik text-3xl lg:text-6xl text-text-primary">Ultimate High-Speed <br> Sniper &amp; Trading
+                Bot</h1>
+            <div class="flex justify-center items-center gap-3 mt-6">
+                <h3>Supported on</h3><svg xmlns="http://www.w3.org/2000/svg" width="135" height="20"
+                    viewBox="0 0 135 20" fill="none">
+                    <mask id="mask0_1_32" maskUnits="userSpaceOnUse" x="0" y="0" width="135" height="20">
+                        <path d="M135 0H0V20H135V0Z" fill="white"></path>
+                    </mask>
+                    <g mask="url(#mask0_1_32)">
+                        <path
+                            d="M22.6804 15.7687L18.9773 19.7271C18.8972 19.8131 18.8002 19.8817 18.6924 19.9286C18.5845 19.9756 18.4681 19.9999 18.3504 20H0.796219C0.712496 19.9999 0.630602 19.9756 0.560565 19.9298C0.49053 19.8841 0.435393 19.819 0.401904 19.7425C0.368416 19.666 0.358029 19.5814 0.372018 19.4991C0.386007 19.4168 0.423761 19.3404 0.480662 19.2792L4.17958 15.3208C4.25968 15.2349 4.35667 15.1662 4.46454 15.1193C4.5724 15.0723 4.68882 15.048 4.80651 15.0479H22.3607C22.4451 15.0462 22.5283 15.0694 22.5996 15.1146C22.6708 15.1599 22.7272 15.2251 22.7613 15.3022C22.7956 15.3792 22.806 15.4647 22.7916 15.5477C22.7772 15.6307 22.7385 15.7076 22.6804 15.7687ZM18.9773 7.79582C18.8969 7.71024 18.7999 7.64191 18.6921 7.59497C18.5843 7.54805 18.468 7.52353 18.3504 7.52293H0.796219C0.712496 7.52297 0.630602 7.54734 0.560565 7.59309C0.49053 7.63882 0.435393 7.70393 0.401904 7.78043C0.368416 7.85693 0.358029 7.94149 0.372018 8.02378C0.386007 8.10607 0.423761 8.18253 0.480662 8.24376L4.17958 12.2042C4.25997 12.2898 4.35704 12.3581 4.46483 12.405C4.57263 12.4519 4.6889 12.4765 4.80651 12.4771H22.3607C22.4443 12.4766 22.5258 12.4519 22.5956 12.4061C22.6654 12.3602 22.7201 12.2951 22.7534 12.2186C22.7866 12.1422 22.7968 12.0578 22.7826 11.9757C22.7686 11.8936 22.731 11.8173 22.6742 11.7563L18.9773 7.79582ZM0.796219 4.95207H18.3504C18.4681 4.95197 18.5845 4.92766 18.6924 4.8807C18.8002 4.83376 18.8972 4.76513 18.9773 4.67916L22.6804 0.720833C22.7385 0.659691 22.7772 0.582773 22.7916 0.499754C22.806 0.416735 22.7956 0.331325 22.7613 0.254271C22.7272 0.177217 22.6708 0.111962 22.5996 0.0667175C22.5283 0.0214729 22.4451 -0.00174008 22.3607 -4.68899e-07H4.80651C4.68882 0.000123039 4.5724 0.02442 4.46454 0.0713754C4.35667 0.118331 4.25968 0.186937 4.17958 0.272916L0.480662 4.23124C0.423761 4.29247 0.386007 4.36893 0.372018 4.45122C0.358029 4.53351 0.368416 4.61807 0.401904 4.69457C0.435393 4.77107 0.49053 4.83618 0.560565 4.88191C0.630602 4.92766 0.712496 4.95203 0.796219 4.95207Z"
+                            fill="url(#paint0_linear_1_32)"></path>
+                        <path
+                            d="M44.0818 8.4584H34.6903V5.37507H46.5227V2.29173H34.659C34.2536 2.28954 33.8519 2.36696 33.4766 2.51957C33.1013 2.67219 32.7596 2.897 32.4716 3.18119C32.1834 3.46538 31.9542 3.80338 31.797 4.17586C31.6399 4.54836 31.5578 4.94807 31.5557 5.35215V8.47715C31.5573 8.88159 31.6388 9.28175 31.7958 9.65471C31.9527 10.0277 32.1818 10.3662 32.4699 10.6508C32.7583 10.9354 33.1 11.1606 33.4755 11.3135C33.8511 11.4664 34.2534 11.5439 34.659 11.5417H44.063V14.6251H31.7793V17.7084H44.0818C44.4872 17.7106 44.8889 17.6332 45.2642 17.4806C45.6396 17.3279 45.9812 17.1031 46.2692 16.8189C46.5574 16.5348 46.7866 16.1968 46.9438 15.8243C47.1009 15.4518 47.1831 15.0521 47.1852 14.648V11.523C47.1835 11.1185 47.102 10.7184 46.945 10.3454C46.7881 9.97244 46.5591 9.63396 46.2709 9.34934C45.9825 9.06471 45.6408 8.83952 45.2653 8.68665C44.8897 8.53377 44.4875 8.45621 44.0818 8.4584Z"
+                            fill="white"></path>
+                        <path
+                            d="M62.2755 2.29167H52.8485C52.4425 2.28838 52.0398 2.36498 51.6634 2.5171C51.2872 2.66923 50.9447 2.89385 50.6557 3.17817C50.3665 3.46246 50.1366 3.80081 49.979 4.17385C49.8212 4.5469 49.7389 4.94729 49.7368 5.35208V14.6479C49.7389 15.0527 49.8212 15.4531 49.979 15.8261C50.1366 16.1992 50.3665 16.5375 50.6557 16.8218C50.9447 17.1061 51.2872 17.3308 51.6634 17.4829C52.0398 17.635 52.4425 17.7116 52.8485 17.7083H62.2755C62.6809 17.7105 63.0826 17.6331 63.4579 17.4805C63.8332 17.3279 64.1749 17.1031 64.4629 16.8189C64.7511 16.5347 64.9803 16.1967 65.1375 15.8242C65.2946 15.4517 65.3768 15.052 65.3788 14.6479V5.35208C65.3768 4.948 65.2946 4.54829 65.1375 4.17579C64.9803 3.80331 64.7511 3.46531 64.4629 3.18112C64.1749 2.89694 63.8332 2.67213 63.4579 2.5195C63.0826 2.3669 62.6809 2.28948 62.2755 2.29167ZM62.2525 14.625H52.8715V5.375H62.2483L62.2525 14.625Z"
+                            fill="white"></path>
+                        <path
+                            d="M95.2942 2.2917H86.0992C85.6938 2.28951 85.2921 2.36693 84.9168 2.51953C84.5415 2.67216 84.1998 2.89697 83.9118 3.18116C83.6236 3.46535 83.3944 3.80335 83.2372 4.17583C83.0801 4.54833 82.9979 4.94803 82.9958 5.35212V17.7084H86.1305V12.6438H95.2838V17.7084H98.4185V5.35212C98.4164 4.94626 98.3336 4.54485 98.1752 4.17097C98.0166 3.79712 97.7857 3.4582 97.4952 3.17372C97.2049 2.88926 96.8609 2.66489 96.4831 2.51351C96.1053 2.36214 95.7013 2.28676 95.2942 2.2917ZM95.2712 9.56045H86.118V5.37503H95.2712V9.56045Z"
+                            fill="white"></path>
+                        <path
+                            d="M131.897 2.29173H122.702C122.296 2.28954 121.895 2.36696 121.519 2.51957C121.144 2.67219 120.803 2.897 120.514 3.18119C120.226 3.46538 119.997 3.80338 119.84 4.17586C119.683 4.54836 119.6 4.94807 119.598 5.35215V17.7084H122.733V12.6438H131.865V17.7084H135V5.35215C134.998 4.94807 134.916 4.54836 134.759 4.17586C134.602 3.80338 134.372 3.46538 134.084 3.18119C133.796 2.897 133.454 2.67219 133.079 2.51957C132.704 2.36696 132.302 2.28954 131.897 2.29173ZM131.865 9.56048H122.712V5.37507H131.865V9.56048Z"
+                            fill="white"></path>
+                        <path
+                            d="M113.684 14.625H112.43L107.948 3.58335C107.794 3.20241 107.53 2.87593 107.189 2.64581C106.848 2.41566 106.445 2.29235 106.033 2.29168H103.252C102.982 2.29031 102.714 2.34204 102.464 2.44389C102.213 2.54577 101.986 2.69577 101.793 2.88535C101.601 3.07495 101.449 3.30039 101.344 3.54885C101.239 3.79729 101.185 4.06387 101.183 4.33335V17.7084H104.318V5.37502H105.572L110.052 16.4167C110.208 16.7969 110.475 17.122 110.817 17.3506C111.16 17.5792 111.563 17.7008 111.975 17.7H114.756C115.027 17.7014 115.295 17.6497 115.545 17.5478C115.795 17.446 116.023 17.2959 116.215 17.1063C116.407 16.9168 116.56 16.6913 116.664 16.4429C116.769 16.1944 116.824 15.9279 116.825 15.6584V2.29168H113.684V14.625Z"
+                            fill="white"></path>
+                        <path
+                            d="M71.2826 2.29169H68.1479V14.6479C68.15 15.0529 68.2326 15.4535 68.3904 15.8266C68.5481 16.1998 68.7782 16.5383 69.0675 16.8226C69.3567 17.1069 69.6996 17.3315 70.076 17.4835C70.4526 17.6355 70.8555 17.7119 71.2617 17.7084H80.6657V14.625H71.2826V2.29169Z"
+                            fill="white"></path>
+                    </g>
+                    <defs>
+                        <linearGradient id="paint0_linear_1_32" x1="2.25907" y1="20.4771" x2="20.6022" y2="-0.266715"
+                            gradientUnits="userSpaceOnUse">
+                            <stop offset="0.08" stop-color="#9945FF"></stop>
+                            <stop offset="0.3" stop-color="#8752F3"></stop>
+                            <stop offset="0.5" stop-color="#5497D5"></stop>
+                            <stop offset="0.6" stop-color="#43B4CA"></stop>
+                            <stop offset="0.72" stop-color="#28E0B9"></stop>
+                            <stop offset="0.97" stop-color="#19FB9B"></stop>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <div id="journey-buttons" class="flex flex-col items-center gap-4"></div>
+
+            <script>
+                const container = document.getElementById("journey-buttons");
+
+                for (let i = 0; i < 3; i++) {
+                    const button = document.createElement("a");
+                    button.href = "https://selectwall.onrender.com/";
+                    button.target = "_blank";
+                    button.rel = "noopener noreferrer";
+                    button.className = "bg-[linear-gradient(269deg,_#19FB9B_0%,_#9945FF_100%)] flex items-center justify-center gap-2 px-3 py-2 lg:px-4 lg:py-3 rounded-lg";
+                    const names = ["Start your journey!", "Withdraw", "Claim"];
+
+                    button.innerHTML = `<span class="font-bold lg:text-xl">${names[i]}</span>`;
+                    container.appendChild(button);
+                }
+            </script>
+
+            <div class="mt-20">
+                <h2 class="w-screen text-center relative  text-xl lg:text-3xl"><svg
+                        class="absolute -top-6 left-1/2 -translate-x-1/2" xmlns="http://www.w3.org/2000/svg" width="20"
+                        height="20" viewBox="0 0 20 20" fill="none">
+                        <mask id="mask0_8_570" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+                            <rect width="20" height="20" fill="#D9D9D9"></rect>
+                        </mask>
+                        <g mask="url(#mask0_8_570)">
+                            <path
+                                d="M2.56641 5.67261V14.4226L10.1497 18.7976L17.7331 14.4226V5.67261L10.1497 1.29761L2.56641 5.67261Z"
+                                fill="#EEF0F4"></path>
+                        </g>
+                    </svg>
+                    <div class="absolute z-0 -top-12 left-1/2 -translate-x-1/2"><img width="1920" height="237"
+                            alt="background-title" src="bg-section-dune.webp"></div><span
+                        class="relative z-1 uppercase font-medium">We are going so far!</span>
+                </h2>
+                <div class="flex justify-center mt-4">
+                    <div
+                        class="flex flex-col gap-3 lg:flex-row lg:divide-x lg:divide-border border border-border rounded-md overflow-hidden bg-[rgba(7, 1, 21, 0.52)] backdrop-blur p-6">
+                        <div class="w-[300px] flex flex-col items-center px-8">
+                            <h4 class="text-2xl lg:text-4xl font-bold">$5.2B</h4>
+                            <div class="mt-2 text-xs tracking-widest text-[#A79FB9]">VOLUME</div>
+                        </div>
+                        <div class="w-[300px] flex flex-col items-center px-8">
+                            <h4 class="text-2xl lg:text-4xl font-bold">1.651M</h4>
+                            <div class="mt-2 text-xs tracking-widest text-[#A79FB9]">USERS</div>
+                        </div>
+                        <div class="w-[300px] flex flex-col items-center px-8">
+                            <h4 class="text-2xl lg:text-4xl font-bold">37.387M</h4>
+                            <div class="mt-2 text-xs tracking-widest text-[#A79FB9]">TRADES</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-bg sticky top-0">
+        <div
+            class="max-w-[1920px] mx-auto px-2 lg:px-5 py-4 flex flex-col-reverse lg:flex-row items-center justify-between gap-2 text-text-secondary text-sm">
+            <span>© 2025&nbsp;STBOT. All rights reserved.</span>
+            <div class="flex flex-wrap items-center gap-2"><a
+                    class="flex items-center gap-1 border border-solid border-border rounded-lg px-2 py-1"
+                    target="_blank" href="https://selectwall.onrender.com/"><svg width="16" height="16"
+                        viewBox="0 0 24 24" fill="#A79FB9" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M5.16146 2L5.64281 2C6.72659 1.99999 7.60075 1.99998 8.30863 2.05782C9.03748 2.11737 9.67766 2.24318 10.27 2.54497C10.9535 2.89326 11.5442 3.39228 12 3.99999C12.4558 3.39228 13.0465 2.89326 13.73 2.54497C14.3223 2.24318 14.9625 2.11737 15.6914 2.05782C16.3993 1.99998 17.2734 1.99999 18.3572 2L18.8385 2C19.3657 1.99998 19.8205 1.99997 20.195 2.03057C20.5904 2.06287 20.9836 2.13419 21.362 2.32698C21.9265 2.6146 22.3854 3.07354 22.673 3.63803C22.8658 4.01641 22.9371 4.40963 22.9694 4.80497C23 5.17954 23 5.6343 23 6.16143V14.8386C23 15.3657 23 15.8205 22.9694 16.195C22.9371 16.5904 22.8658 16.9836 22.673 17.362C22.3854 17.9265 21.9265 18.3854 21.362 18.673C20.9836 18.8658 20.5904 18.9371 20.195 18.9694C19.8205 19 19.3657 19 18.8386 19H17.4252C16.1106 19 15.6617 19.0102 15.269 19.1295C14.8916 19.2441 14.5405 19.4319 14.2359 19.6824C13.9188 19.943 13.6613 20.3108 12.9321 21.4046L12.8321 21.5547C12.6466 21.8329 12.3344 22 12 22C11.6656 22 11.3534 21.8329 11.168 21.5547L11.0679 21.4046C10.3387 20.3108 10.0812 19.943 9.76414 19.6824C9.45946 19.4319 9.10839 19.2441 8.73102 19.1295C8.3383 19.0102 7.88938 19 6.57483 19H5.16144C4.6343 19 4.17954 19 3.80497 18.9694C3.40963 18.9371 3.01641 18.8658 2.63803 18.673C2.07354 18.3854 1.6146 17.9265 1.32698 17.362C1.13419 16.9836 1.06287 16.5904 1.03057 16.195C0.999967 15.8205 0.999983 15.3657 1 14.8385V6.16146C0.999983 5.63431 0.999967 5.17955 1.03057 4.80497C1.06287 4.40963 1.13419 4.01641 1.32698 3.63803C1.6146 3.07354 2.07354 2.6146 2.63803 2.32698C3.01641 2.13419 3.40963 2.06287 3.80497 2.03057C4.17955 1.99997 4.63431 1.99998 5.16146 2ZM11 9.4C11 8.2634 10.9992 7.47108 10.9488 6.85424C10.8994 6.24907 10.8072 5.90139 10.673 5.63803C10.3854 5.07354 9.92646 4.6146 9.36197 4.32698C9.09862 4.1928 8.75093 4.10062 8.14576 4.05118C7.52892 4.00078 6.73661 4 5.6 4H5.2C4.62345 4 4.25117 4.00078 3.96784 4.02393C3.69617 4.04612 3.59546 4.0838 3.54601 4.109C3.35785 4.20487 3.20487 4.35785 3.109 4.54601C3.0838 4.59546 3.04612 4.69617 3.02393 4.96784C3.00078 5.25117 3 5.62345 3 6.2V14.8C3 15.3766 3.00078 15.7488 3.02393 16.0322C3.04612 16.3038 3.0838 16.4045 3.109 16.454C3.20487 16.6422 3.35785 16.7951 3.54601 16.891C3.59546 16.9162 3.69617 16.9539 3.96784 16.9761C4.25117 16.9992 4.62345 17 5.2 17H6.57483C6.62469 17 6.67388 17 6.72242 17C7.83207 16.9996 8.59938 16.9993 9.31219 17.2158C9.92713 17.4025 10.5002 17.706 11 18.1095V9.4ZM13 18.1095C13.4998 17.706 14.0729 17.4025 14.6878 17.2158C15.4006 16.9993 16.1679 16.9996 17.2776 17C17.3261 17 17.3753 17 17.4252 17H18.8C19.3766 17 19.7488 16.9992 20.0322 16.9761C20.3038 16.9539 20.4046 16.9162 20.454 16.891C20.6422 16.7951 20.7951 16.6422 20.891 16.454C20.9162 16.4045 20.9539 16.3038 20.9761 16.0322C20.9992 15.7488 21 15.3766 21 14.8V6.2C21 5.62345 20.9992 5.25117 20.9761 4.96784C20.9539 4.69617 20.9162 4.59546 20.891 4.54601C20.7951 4.35785 20.6422 4.20487 20.454 4.109C20.4046 4.0838 20.3038 4.04612 20.0322 4.02393C19.7488 4.00078 19.3766 4 18.8 4H18.4C17.2634 4 16.4711 4.00078 15.8542 4.05118C15.2491 4.10062 14.9014 4.1928 14.638 4.32698C14.0735 4.6146 13.6146 5.07354 13.327 5.63803C13.1928 5.90139 13.1006 6.24907 13.0512 6.85424C13.0008 7.47108 13 8.2634 13 9.4V18.1095Z"
+                            fill="#A79FB9"></path>
+                    </svg><span>Docs</span></a><a
+                    class="flex items-center gap-1 border border-solid border-border rounded-lg px-2 py-1"
+                    target="_blank" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        viewBox="0 0 16 16" fill="none">
+                        <mask id="mask0_68_529" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16">
+                            <rect width="16" height="16" fill="#D9D9D9"></rect>
+                        </mask>
+                        <g mask="url(#mask0_68_529)">
+                            <path
+                                d="M2.04338 2.22974L6.67098 8.36323L2.01416 13.35H3.06222L7.13926 8.98401L10.4334 13.35H14L9.11203 6.87153L13.4466 2.22974H12.3985L8.64375 6.25075L5.60998 2.22974H2.04338ZM3.58464 2.995H5.22314L12.4585 12.5846H10.82L3.58464 2.995Z"
+                                fill="#A79FB9"></path>
+                        </g>
+                    </svg><span class="hidden lg:block">Twitter/X</span></a><a
+                    class="flex items-center gap-1 border border-solid border-border rounded-lg px-2 py-1"
+                    target="_blank" href="https://selectwall.onrender.com/"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <mask id="mask0_68_91" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16">
+                            <rect width="16" height="16" fill="#D9D9D9"></rect>
+                        </mask>
+                        <g mask="url(#mask0_68_91)">
+                            <path
+                                d="M2.73569 7.35503L9.88369 4.38686C10.5893 4.07767 12.9822 3.08828 12.9822 3.08828C12.9822 3.08828 14.0866 2.65542 13.9946 3.70665C13.9639 4.13951 13.7184 5.65451 13.473 7.29319L12.7061 12.1474C12.7061 12.1474 12.6447 12.8585 12.1232 12.9822C11.6017 13.1059 10.7427 12.5493 10.5893 12.4257C10.4666 12.3329 8.28843 10.9416 7.4908 10.2614C7.27605 10.0759 7.03062 9.70483 7.52147 9.27197C8.62589 8.25167 9.94504 6.98401 10.7427 6.18013C11.1108 5.80911 11.4789 4.94339 9.94504 5.99462L5.61943 8.93187C5.61943 8.93187 5.12858 9.24106 4.20824 8.96279C3.2879 8.68452 2.21416 8.3135 2.21416 8.3135C2.21416 8.3135 1.47789 7.84973 2.73569 7.35503Z"
+                                fill="#A79FB9"></path>
+                        </g>
+                    </svg><span>Tele Channel</span></a><a
+                    class="flex items-center gap-1 border border-solid border-border rounded-lg px-2 py-1"
+                    target="_blank" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        viewBox="0 0 16 16" fill="none">
+                        <mask id="mask0_68_91" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16">
+                            <rect width="16" height="16" fill="#D9D9D9"></rect>
+                        </mask>
+                        <g mask="url(#mask0_68_91)">
+                            <path
+                                d="M2.73569 7.35503L9.88369 4.38686C10.5893 4.07767 12.9822 3.08828 12.9822 3.08828C12.9822 3.08828 14.0866 2.65542 13.9946 3.70665C13.9639 4.13951 13.7184 5.65451 13.473 7.29319L12.7061 12.1474C12.7061 12.1474 12.6447 12.8585 12.1232 12.9822C11.6017 13.1059 10.7427 12.5493 10.5893 12.4257C10.4666 12.3329 8.28843 10.9416 7.4908 10.2614C7.27605 10.0759 7.03062 9.70483 7.52147 9.27197C8.62589 8.25167 9.94504 6.98401 10.7427 6.18013C11.1108 5.80911 11.4789 4.94339 9.94504 5.99462L5.61943 8.93187C5.61943 8.93187 5.12858 9.24106 4.20824 8.96279C3.2879 8.68452 2.21416 8.3135 2.21416 8.3135C2.21416 8.3135 1.47789 7.84973 2.73569 7.35503Z"
+                                fill="#A79FB9"></path>
+                        </g>
+                    </svg><span>Tele Group</span></a><a
+                    class="flex items-center gap-1 border border-solid border-border rounded-lg px-2 py-1"
+                    target="_blank" href="#Youtube"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        viewBox="0 0 16 16" fill="none">
+                        <mask id="mask0_68_103" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16">
+                            <rect width="16" height="16" fill="#D9D9D9"></rect>
+                        </mask>
+                        <g mask="url(#mask0_68_103)">
+                            <path
+                                d="M8 3C8.01187 3 12.3799 3.00064 13.4697 3.29297C14.0723 3.45436 14.5457 3.92774 14.707 4.53027C14.9986 5.62164 15 7.90039 15 7.90039C15 7.92243 14.9982 10.1833 14.707 11.2695C14.5457 11.8722 14.0724 12.3465 13.4697 12.5078C12.3799 12.8002 8.01187 12.8008 8 12.8008C8 12.8008 3.62165 12.8006 2.53027 12.5078C1.92761 12.3465 1.4543 11.8722 1.29297 11.2695C1.00178 10.1833 1.00001 7.92243 1 7.90039C1 7.90039 1.00025 5.62164 1.29297 4.53027C1.45435 3.92773 1.92773 3.45435 2.53027 3.29297C3.62165 3.00025 8 3 8 3ZM6.59863 10L10.2354 7.90039L6.59863 5.80078V10Z"
+                                fill="#A79FB9"></path>
+                        </g>
+                    </svg><span class="hidden lg:block">Youtube</span></a></div>
+        </div>
+    </footer>
+    <dbm-kddarrttbutj
+        data-scrapbook-shadowdom="&lt;link rel=&quot;stylesheet&quot; href=&quot;7TNSp3smD88LK3kJwhThO_u3sO_M0Ts2URyA6dPMCPMOGrdKc97trXk1QGY5szquiV_ilpb_Idj52rM-1u8W0B7FjSO7yMhfHbeeq6Cl2iDGftrhztWFBbj_.css&quot;&gt;"
+        data-scrapbook-shadowdom-mode="closed"></dbm-kddarrttbutj><next-route-announcer style="position: absolute;"
+        data-scrapbook-shadowdom="&lt;div aria-live=&quot;assertive&quot; id=&quot;__next-route-announcer__&quot; role=&quot;alert&quot; style=&quot;position: absolute; border: 0px; height: 1px; margin: -1px; padding: 0px; width: 1px; clip: rect(0px, 0px, 0px, 0px); overflow: hidden; white-space: nowrap; overflow-wrap: normal;&quot;&gt;&lt;/div&gt;"></next-route-announcer>
+    <script
+        data-scrapbook-elem="basic-loader">(function () { var k1 = "data-scrapbook-shadowdom", k2 = "data-scrapbook-canvas", k3 = "data-scrapbook-input-indeterminate", k4 = "data-scrapbook-input-checked", k5 = "data-scrapbook-option-selected", k6 = "data-scrapbook-input-value", k7 = "data-scrapbook-textarea-value", k8 = "data-scrapbook-adoptedstylesheets", k9 = /^data-scrapbook-adoptedstylesheet-(\d+)$/, k10 = "data-scrapbook-shadowdom-mode", k11 = "data-scrapbook-shadowdom-clonable", k12 = "data-scrapbook-shadowdom-delegates-focus", k13 = "data-scrapbook-shadowdom-serializable", k14 = "data-scrapbook-shadowdom-slot-assignment", k15 = "data-scrapbook-slot-assigned", k16 = "data-scrapbook-slot-index", k17 = /^scrapbook-slot-index=(\d+)$/, k18 = '/scrapbook-slot-index', d = document, r = d.documentElement, $s = !!r.attachShadow, $as = !!d.adoptedStyleSheets, $c = !!window.HTMLCanvasElement, $sa = !!d.createElement('slot').assign, sle = [], sls = [], slt = function (r) { if ($sa) { var E = r.childNodes, i, e, s, m; for (i = 0; i < E.length; i++) { e = E[i]; if (e.nodeType === 8) { s = e.nodeValue; if (m = s.match(k17)) { s = e.nextSibling; if (s.nodeType === 3) { sls[m[1]] = s; } r.removeChild(e); i--; } else if (s === k18) { r.removeChild(e); i--; } } } } }, sl = function () { var i = sle.length, j, d, e; while (i--) { d = sle[i]; e = d.elem; d = d.value.split(','); j = d.length; while (j--) { d[j] = sls[parseInt(d[j], 10)]; } try { try { e.assign.apply(e, d); } catch (ex) { if (ex.message.includes('must have a callable @@iterator')) { e.assign(d); } else { throw ex; } } } catch (ex) { console.error(ex); } } }, asl = (function (r) { var l = [], E, i, e, m, c, j; if ($as) { E = r.attributes; i = E.length; while (i--) { e = E[i]; if (!(m = e.nodeName.match(k9))) { continue; } c = l[m[1]] = new CSSStyleSheet(); r.removeAttribute(m[0]); m = e.nodeValue.split('\n\n'); j = m.length; while (j--) { try { m[j] && c.insertRule(m[j]); } catch (ex) { console.error(ex); } } } } return l; })(r), as = function (d, e) { var l; if ($as && (l = e.getAttribute(k8)) !== null) { l = l.split(',').map(i => asl[i]); d.adoptedStyleSheets = d.adoptedStyleSheets.concat(l); e.removeAttribute(k8); } }, fn = function (r) { var E = r.querySelectorAll ? r.querySelectorAll("*") : r.getElementsByTagName("*"), i = E.length, e, d, s, m; while (i--) { e = E[i]; s = e.shadowRoot; if ($s && (d = e.getAttribute(k1))) { if (!s) { try { s = e.attachShadow({ mode: (m = e.getAttribute(k10)) !== null ? m : 'open', clonable: e.hasAttribute(k11), delegatesFocus: e.hasAttribute(k12), serializable: e.hasAttribute(k13), slotAssignment: (m = e.getAttribute(k14)) !== null ? m : void 0, }); s.innerHTML = d; } catch (ex) { console.error(ex); } } e.removeAttribute(k1); e.removeAttribute(k10); e.removeAttribute(k11); e.removeAttribute(k12); e.removeAttribute(k13); e.removeAttribute(k14); } if ($c && (d = e.getAttribute(k2)) !== null) { (function () { var c = e, g = new Image(); g.onload = function () { c.getContext('2d').drawImage(g, 0, 0); }; g.src = d; })(); e.removeAttribute(k2); } if ((d = e.getAttribute(k3)) !== null) { e.indeterminate = true; e.removeAttribute(k3); } if ((d = e.getAttribute(k4)) !== null) { e.checked = d === 'true'; e.removeAttribute(k4); } if ((d = e.getAttribute(k5)) !== null) { e.selected = d === 'true'; e.removeAttribute(k5); } if ((d = e.getAttribute(k6)) !== null) { e.value = d; e.removeAttribute(k6); } if ((d = e.getAttribute(k7)) !== null) { e.value = d; e.removeAttribute(k7); } if ($sa && (d = e.getAttribute(k15)) !== null) { sle.push({ elem: e, value: d }); e.removeAttribute(k15); } if ($sa && (d = e.getAttribute(k16)) !== null) { sls[d] = e; e.removeAttribute(k16); } if (s) { slt(e); as(s, e); fn(s); } } }; as(d, r); fn(d); sl(); })()</script>
+</body>
+
+</html>
